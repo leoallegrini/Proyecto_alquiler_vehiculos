@@ -1,0 +1,120 @@
+<header class="masthead">
+<div class="col-md-6 offset-md-3">
+  <h1 style="text-shadow: 2px 0 #000; color:gold">Rentals Venado</h1>
+  <h3 class="text-center" style="color: gold; text-shadow: 2px 0 #000;">Registro de alquiler</h3>
+  <form (ngSubmit)= "onSubmit()">
+    <div class="row" style="text-shadow: 2px 0 #000; color: gold">
+      <div class="col">
+        <div class="form-group">
+          <label>Nombre: </label>
+          <input type="text"
+          placeholder="Ingresa tu nombre"
+          class="form-control"
+          id="nombre"
+          name="nombre">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Apellido: </label>
+          <input type="text"
+          placeholder="Ingresa tu apellido"
+          class="form-control"
+          id="apellido"
+          name="apellido"
+          >
+        </div>
+        <br>
+        <div class="form-group">
+          <label>DNI: </label>
+          <input type="text"
+          placeholder="Ingresa tu dni"
+          class="form-control"
+          id="dni"
+          name="dni">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Cuit/Cuil: </label>
+          <input type="text"
+          placeholder="Ingresa tu cuit/cuil"
+          class="form-control"
+          id="cuit"
+          name="cuit">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Fecha de Nacimiento: </label>
+          <input type="date"
+          class="form-control"
+          value="2000-01-01"
+          min="1960-01-01"
+          max="2004-06-30"
+          id="fecha"
+          name="fecha">
+        </div>
+        <br>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Celular: </label>
+          <input type="text"
+          placeholder="Ingresa tu celular"
+          class="form-control"
+          id="celular"
+          name="celular">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Direccion: </label>
+          <input type="text"
+          placeholder="Ingresa tu direccion"
+          class="form-control"
+          id="direccion"
+          name="direccion">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Codigo Postal: </label>
+          <input type="text"
+          placeholder="Ingresa tu cod. postal"
+          class="form-control"
+          id="codigopostal"
+          name="codigopostal">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Nacionalidad: </label>
+          <input type="text"
+          placeholder="Ingresa tu nacionalidad"
+          class="form-control"
+          id="nacionalidad"
+          name="nacionalidad">
+        </div>
+        <br>
+        <div class="form-group">
+          <label>Fecha de Retiro </label>
+          <input type="date"
+          class="form-control"
+          value="2022-01-01"
+          min="2022-01-01"
+          max="2023-12-31"
+          id="fecha"
+          name="fecha">
+        </div>
+      </div>
+    </div>
+    <h3 class="text-center" style="text-shadow: 2px 0 #000; color: gold">Vehiculo Seleccionado</h3>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label><img src="{{vehiculos.imagen}}" width="100" height="100"> {{vehiculos.marca}} {{vehiculos.modelo}}</label>
+        </div>
+        <br>
+      </div>
+    </div>
+    <button type="button" class="btn btn-success"
+    style="float: right;" (click)="actualizarVehiculo(vehiculos)" >
+    Confirmar Alquiler</button>
+  </form>
+</div>
+</header>
