@@ -1,4 +1,4 @@
-package com.proyecto.proyecto_alquiler_vehiculos.Models;
+package com.proyecto.proyecto_alquiler_vehiculos.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +69,19 @@ public class I_Vehiculo {
             }
         }
         return vehiculoSeleccionado;
+    }
+
+
+    public Alquiler registrarAlquiler(Alquiler alquiler){
+        Alquiler nuevoAlquiler = new Alquiler(alquiler.getNombre(),
+        alquiler.getApellido(),
+        alquiler.getDNI(), alquiler.getCuit(), alquiler.getEmail(),
+        alquiler.getCelular(), alquiler.getDireccion(),
+        alquiler.getNacionalidad(), alquiler.getMarca(), alquiler.getModelo(),
+        alquiler.getAnio(), alquiler.getTamanio(),
+        alquiler.getCategoria());
         
-    } 
+        return nuevoAlquiler;
+    }
+    
 }

@@ -9,9 +9,10 @@ export class Cliente {
   apellido: String;
   dni: String;
   cuit: String;
-  direccin: String;
+  direccion: String;
   codpostal: String;
   celular: String;
   nacionalidad: String;
+  fecharetiro: Date;
 
 }

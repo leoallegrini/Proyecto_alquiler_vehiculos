@@ -1,3 +1,4 @@
+import { Alquiler } from './../alquiler';
 import { Vehiculo } from '../classes/vehiculo';
 import { Component, OnInit} from '@angular/core';
 import { VehiculoService } from '../services/vehiculo.service';
@@ -12,16 +13,31 @@ import { Router } from '@angular/router';
 export class RegistrarAlquilerVehiculoComponent implements OnInit {
 
   vehiculos : Vehiculo;
+  alquiler : Alquiler = new Alquiler();
 
   constructor(private vehiculoServicio:VehiculoService, private _route:ActivatedRoute,  private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     let id = this._route.snapshot.paramMap.get('id');
     this.mostrarVehiculos(id!)
   }
 
-  onSubmit(){
+  guardarAlquiler(){
+    this.alquiler.marca = this.vehiculos.marca;
+    this.alquiler.modelo = this.vehiculos.modelo;
+    this.alquiler.anio = this.vehiculos.anio;
+    this.alquiler.disponible = this.vehiculos.disponible;
+    this.alquiler.iD = this.vehiculos.id;
+    this.alquiler.transmision = this.vehiculos.transmision;
+    this.alquiler.tamanio = this.vehiculos.tamanio;
+    this.alquiler.categoria = this.vehiculos.categoria;
 
+    console.log(this.alquiler);
+
+    this.vehiculoServicio.registrarAlquiler(this.alquiler).subscribe(dato => {
+      //console.log(dato);
+      this.actualizarVehiculo(this.vehiculos);
+    }, error => console.log(error));
   }
 
   private mostrarVehiculos(cod: string){
@@ -40,6 +56,12 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
     let link = ['/vehiculos'];
     this.router.navigate(link);
   }
+
+  onSubmit(){
+    this.guardarAlquiler();
+  }
+
+
 }
 
 

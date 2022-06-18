@@ -1,30 +1,34 @@
+import { Alquiler } from './../alquiler';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 import { Vehiculo } from '../classes/vehiculo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VehiculoService {
-  //URL backend listado de todos los vehiculos
-  private baseUrl = "http://localhost:8080/RentalsVenado/vehiculos";
-  private urlVehiSingle = "http://localhost:8080/RentalsVenado/ObtenerVehiculo"
-  private urlVehiUpdate = "http://localhost:8080/RentalsVenado/Actualizar"
+  //URL backend
+  private baseUrl = "http://localhost:8080/RentalsVenado";
+
 
   constructor(private httpClient : HttpClient) { }
 
   //Este metodo devuleve los vehiculos
   obtenerListaVehiculos(): Observable<Vehiculo[]>{
-    return this.httpClient.get<Vehiculo[]>(`${this.baseUrl}`);
+    return this.httpClient.get<Vehiculo[]>(`${this.baseUrl}/vehiculos`);
   }
 
   obtenerVehiculo(id:number):Observable<Vehiculo>{
-    return this.httpClient.get<Vehiculo>(`${this.urlVehiSingle}/${id}`);
+    return this.httpClient.get<Vehiculo>(`${this.baseUrl}/ObtenerVehiculo/${id}`);
   }
 
   actualizarVehiculo(id:number):Observable<Vehiculo>{
-    return this.httpClient.get<Vehiculo>(`${this.urlVehiUpdate}/${id}`);
+    return this.httpClient.get<Vehiculo>(`${this.baseUrl}/Actualizar/${id}`);
    }
+
+   registrarAlquiler(alquiler:Alquiler):Observable<object>{
+     return this.httpClient.post(`${this.baseUrl}/RegistrarAlquiler`,alquiler)
+   }
+
 }

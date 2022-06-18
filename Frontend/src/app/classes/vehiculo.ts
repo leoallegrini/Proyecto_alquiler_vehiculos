@@ -7,4 +7,8 @@ export class Vehiculo {
   disponible: boolean;
   precio_Alquiler:number;
   imagen:String;
+  patente: string;
+  tamanio: string;
+  transmision:boolean;
+  categoria: string;
 }

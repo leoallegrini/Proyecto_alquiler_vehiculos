@@ -1,94 +1,139 @@
-package com.proyecto.proyecto_alquiler_vehiculos.Models;
+package com.proyecto.proyecto_alquiler_vehiculos.models;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Cliente {
-    
-    private String Username;
-    private String Password;
-    private DateTimeFormat FechaNacimiento;
-    private String DNI;
-    private String CorreoElectronico;
+
     private String Nombre;
     private String Apellido;
+    private DateTimeFormat FechaNacimiento;
+    private String DNI;
+    private String cuit;
+    private String CorreoElectronico;
     private String Celular;
+    private String Direccion;
+    private String CodPostal;
     private String Nacionalidad;
-
     
+
     public Cliente() {
     }
 
 
-
-    public Cliente(String username, String password, DateTimeFormat fechaNacimiento, String dNI,
-            String correoElectronico, String nombre, String apellido, String celular, String nacionalidad) {
-        this.Username = username;
-        this.Password = password;
-        this.FechaNacimiento = fechaNacimiento;
-        this.DNI = dNI;
-        this.CorreoElectronico = correoElectronico;
-        this.Nombre = nombre;
-        this.Apellido = apellido;
-        this.Celular = celular;
-        this.Nacionalidad = nacionalidad;
+    public Cliente(String nombre, String apellido, DateTimeFormat fechaNacimiento, String dni, String cuit,
+            String correoElectronico, String celular, String direccion, String codPostal, String nacionalidad) {
+        Nombre = nombre;
+        Apellido = apellido;
+        FechaNacimiento = fechaNacimiento;
+        DNI = dni;
+        this.cuit = cuit;
+        CorreoElectronico = correoElectronico;
+        Celular = celular;
+        Direccion = direccion;
+        CodPostal = codPostal;
+        Nacionalidad = nacionalidad;
     }
 
 
-
-    
-
-    public String getUsername() {
-        return Username;
-    }
-    public void setUsername(String username) {
-        this.Username = username;
-    }
-    public String getPassword() {
-        return Password;
-    }
-    public void setPassword(String password) {
-        this.Password = password;
-    }
-    public DateTimeFormat getFechaNacimiento() {
-        return FechaNacimiento;
-    }
-    public void setFechaNacimiento(DateTimeFormat fechaNacimiento) {
-        this.FechaNacimiento = fechaNacimiento;
-    }
-    public String getDNI() {
-        return DNI;
-    }
-    public void setDNI(String dNI) {
-        this.DNI = dNI;
-    }
-    public String getCorreoElectronico() {
-        return CorreoElectronico;
-    }
-    public void setCorreoElectronico(String correoElectronico) {
-        this.CorreoElectronico = correoElectronico;
-    }
     public String getNombre() {
         return Nombre;
     }
+
+
     public void setNombre(String nombre) {
-        this.Nombre = nombre;
+        Nombre = nombre;
     }
+
+
     public String getApellido() {
         return Apellido;
     }
+
+
     public void setApellido(String apellido) {
-        this.Apellido = apellido;
+        Apellido = apellido;
     }
+
+
+    public DateTimeFormat getFechaNacimiento() {
+        return FechaNacimiento;
+    }
+
+
+    public void setFechaNacimiento(DateTimeFormat fechaNacimiento) {
+        FechaNacimiento = fechaNacimiento;
+    }
+
+
+    public String getDNI() {
+        return DNI;
+    }
+
+
+    public void setDNI(String dni) {
+        DNI = dni;
+    }
+
+
+    public String getCuit() {
+        return cuit;
+    }
+
+
+    public void setCuit(String cuit) {
+        this.cuit = cuit;
+    }
+
+
+    public String getCorreoElectronico() {
+        return CorreoElectronico;
+    }
+
+
+    public void setCorreoElectronico(String correoElectronico) {
+        CorreoElectronico = correoElectronico;
+    }
+
+
     public String getCelular() {
         return Celular;
     }
+
+
     public void setCelular(String celular) {
-        this.Celular = celular;
+        Celular = celular;
     }
+
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
+    }
+
+
+    public String getCodPostal() {
+        return CodPostal;
+    }
+
+
+    public void setCodPostal(String codPostal) {
+        CodPostal = codPostal;
+    }
+
+
     public String getNacionalidad() {
         return Nacionalidad;
     }
+
+
     public void setNacionalidad(String nacionalidad) {
-        this.Nacionalidad = nacionalidad;
+        Nacionalidad = nacionalidad;
     }
+
+    
+
 }
