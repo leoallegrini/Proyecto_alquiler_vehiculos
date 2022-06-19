@@ -1,14 +1,15 @@
 export class Alquiler {
   iD:number;
-  marca:string;
-  modelo:string;
-  anio:string;
+  marca:String;
+  modelo:String;
+  anio:String;
   disponible: boolean;
   precio_Alquiler:number;
-  patente: string;
-  tamanio: string;
+  patente: String;
+  tamanio: String;
   transmision:boolean;
-  categoria: string;
+  categoria: String;
+  fechaRetiro: String;
 
   email: String;
   nombre: String;
@@ -18,4 +19,5 @@ export class Alquiler {
   direccion: String;
   celular: String;
   nacionalidad: String;
+  fechaNacimiento: String;
 }

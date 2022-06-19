@@ -24,6 +24,7 @@ public class Alquiler{
     //private Integer Precio_Alquiler;
     //private boolean Disponible;
 
+    public Alquiler(){}
     
     public Alquiler(String nombre, String apellido, String dNI, String cuit,
             String email, String celular, String direccion, String nacionalidad,
