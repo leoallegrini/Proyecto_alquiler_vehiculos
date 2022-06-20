@@ -26,7 +26,7 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
     this.alquiler.marca = this.vehiculos.marca;
     this.alquiler.modelo = this.vehiculos.modelo;
     this.alquiler.anio = this.vehiculos.anio;
-    this.alquiler.disponible = this.vehiculos.disponible;
+    this.alquiler.disponible = false;
     this.alquiler.iD = this.vehiculos.id;
     this.alquiler.transmision = this.vehiculos.transmision;
     this.alquiler.tamanio = this.vehiculos.tamanio;

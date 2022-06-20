@@ -20,11 +20,13 @@ export class ListaVehiculosComponent implements OnInit {
     this.obtenerVehiculos();
   }
 
+
   private obtenerVehiculos() {
     this.vehiculoServicio.obtenerListaVehiculos().subscribe((dato) => {
       this.vehiculos = dato;
     });
   }
+
 
   SeleccionarVehiculo(vehiculo: Vehiculo) {
     let link = ['/registrar-alquiler', vehiculo.id];
