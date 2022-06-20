@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AlquilerController {
 
     @Autowired
-	private I_Vehiculo IVehiculos;
+	private GestorVehiculo IVehiculos;
 
 	//Este metodo lista todos los vehiculos
 	@GetMapping("/vehiculos")

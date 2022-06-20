@@ -5,23 +5,18 @@ public class Alquiler{
 
     private String Nombre;
     private String Apellido;
-    //private DateTimeFormat FechaNacimiento;
     private String DNI;
     private String cuit;
     private String Email;
     private String Celular;
     private String Direccion;
     private String Nacionalidad;
-    //private int ID;
     private String Marca;
     private String Modelo;
     private String Anio;
-    //private String Patente;
     private String Tamanio;
-    //private boolean Transmision;
     private String Categoria;
-    //private Integer Precio_Alquiler;
-    //private boolean Disponible;
+
 
     public Alquiler(){
         

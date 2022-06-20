@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class I_Vehiculo {
+public class GestorVehiculo {
 
     //Creacion de vehiculos
     Vehiculo automovil1 = new Vehiculo(1, "Toyota", "Corolla", "2022",
@@ -26,7 +26,6 @@ public class I_Vehiculo {
         "https://www.autoweb.com.ar/wp-content/uploads/2021/01/FGD_7793-1024x683.jpg" );
 
 
-    
 
     public List<Vehiculo> Vehiculos() {
         
