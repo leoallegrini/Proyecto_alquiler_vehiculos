@@ -1,4 +1,4 @@
-import { Alquiler } from './../alquiler';
+import { Alquiler } from '../classes/alquiler';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';

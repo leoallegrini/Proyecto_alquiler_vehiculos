@@ -1,4 +1,4 @@
-import { Alquiler } from './../alquiler';
+import { Alquiler } from '../classes/alquiler';
 import { Vehiculo } from '../classes/vehiculo';
 import { Component, OnInit} from '@angular/core';
 import { VehiculoService } from '../services/vehiculo.service';
