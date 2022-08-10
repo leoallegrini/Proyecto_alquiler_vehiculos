@@ -72,13 +72,9 @@ public class GestorVehiculo {
 
 
     public Alquiler registrarAlquiler(Alquiler alquiler){
-        Alquiler nuevoAlquiler = new Alquiler(alquiler.getNombre(),
-        alquiler.getApellido(),
-        alquiler.getDNI(), alquiler.getCuit(), alquiler.getEmail(),
-        alquiler.getCelular(), alquiler.getDireccion(),
-        alquiler.getNacionalidad(), alquiler.getMarca(), alquiler.getModelo(),
-        alquiler.getAnio(), alquiler.getTamanio(),
-        alquiler.getCategoria());
+        Alquiler nuevoAlquiler = new Alquiler();
+        nuevoAlquiler.setVehiculo(alquiler.getVehiculo());
+        nuevoAlquiler.setCliente(alquiler.getCliente());
         
         return nuevoAlquiler;
     }

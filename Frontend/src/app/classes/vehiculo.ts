@@ -1,14 +1,14 @@
 export class Vehiculo {
 
   id:number;
-  marca:string;
-  modelo:string;
-  anio:string;
+  marca:String;
+  modelo:String;
+  anio:String;
   disponible: boolean;
   precio_Alquiler:number;
   imagen:String;
-  patente: string;
-  tamanio: string;
+  patente: String;
+  tamanio: String;
   transmision:boolean;
-  categoria: string;
+  categoria: String;
 }
