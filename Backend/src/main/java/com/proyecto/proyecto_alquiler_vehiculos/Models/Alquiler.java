@@ -1,172 +1,95 @@
 package com.proyecto.proyecto_alquiler_vehiculos.models;
 
+import java.sql.Date;
 
-public class Alquiler{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-    private String Nombre;
-    private String Apellido;
-    private String DNI;
-    private String cuit;
-    private String Email;
-    private String Celular;
-    private String Direccion;
-    private String Nacionalidad;
-    private String Marca;
-    private String Modelo;
-    private String Anio;
-    private String Tamanio;
-    private String Categoria;
+@Entity
+@Table(name = "vehiculoalquilado")
+public class Alquiler {
 
-
-    public Alquiler(){
-        
-    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idVehiculoAlquilado;
     
-    public Alquiler(String nombre, String apellido, String dNI, String cuit,
-            String email, String celular, String direccion, String nacionalidad,
-            String marca, String modelo, String anio, String tamanio,
-            String categoria) {
-        Nombre = nombre;
-        Apellido = apellido;
-        DNI = dNI;
-        this.cuit = cuit;
-        Email = email;
-        Celular = celular;
-        Direccion = direccion;
-        Nacionalidad = nacionalidad;
-        Marca = marca;
-        Modelo = modelo;
-        Anio = anio;
-        Tamanio = tamanio;
-        Categoria = categoria;
+    private int idvehiculo;
+    private int idcliente;
+    private Date fechainicio;
+    private Date fechafin;
+    private boolean siniestro;
+    private String detsiniestro;
+    private float montosin;
+
+    public Alquiler() {
+
     }
 
-
-    public String getNombre() {
-        return Nombre;
+    public long getIdVehiculoAlquilado() {
+        return idVehiculoAlquilado;
     }
 
-
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public void setIdVehiculoAlquilado(long idVehiculoAlquilado) {
+        this.idVehiculoAlquilado = idVehiculoAlquilado;
     }
 
-
-    public String getApellido() {
-        return Apellido;
+    public int getIdVehiculo() {
+        return idvehiculo;
     }
 
-
-    public void setApellido(String apellido) {
-        Apellido = apellido;
+    public void setIdVehiculo(int idvehiculo) {
+        this.idvehiculo = idvehiculo;
     }
 
-
-    public String getDNI() {
-        return DNI;
+    public int getIdcliente() {
+        return idcliente;
     }
 
-
-    public void setDNI(String dNI) {
-        DNI = dNI;
+    public void setIdcliente(int idcliente) {
+        this.idcliente = idcliente;
     }
 
-
-    public String getCuit() {
-        return cuit;
+    public Date getFechaInicio() {
+        return fechainicio;
     }
 
-
-    public void setCuit(String cuit) {
-        this.cuit = cuit;
+    public void setFechaInicio(Date fechainicio) {
+        this.fechainicio = fechainicio;
     }
 
-
-    public String getEmail() {
-        return Email;
+    public Date getFechafin() {
+        return fechafin;
     }
 
-
-    public void setEmail(String email) {
-        Email = email;
+    public void setFechaFin(Date fechafin) {
+        this.fechafin = fechafin;
     }
 
-
-    public String getCelular() {
-        return Celular;
+    public boolean isSiniestro() {
+        return siniestro;
     }
 
-
-    public void setCelular(String celular) {
-        Celular = celular;
+    public void setSiniestro(boolean siniestro) {
+        this.siniestro = siniestro;
     }
 
-
-    public String getDireccion() {
-        return Direccion;
+    public String getDetSiniestro() {
+        return detsiniestro;
     }
 
-
-    public void setDireccion(String direccion) {
-        Direccion = direccion;
+    public void setDetSiniestro(String detsiniestro) {
+        this.detsiniestro = detsiniestro;
     }
 
-
-    public String getNacionalidad() {
-        return Nacionalidad;
+    public float getMontoSin() {
+        return montosin;
     }
 
-
-    public void setNacionalidad(String nacionalidad) {
-        Nacionalidad = nacionalidad;
-    }
-
-
-    public String getMarca() {
-        return Marca;
-    }
-
-
-    public void setMarca(String marca) {
-        Marca = marca;
-    }
-
-
-    public String getModelo() {
-        return Modelo;
-    }
-
-
-    public void setModelo(String modelo) {
-        Modelo = modelo;
-    }
-
-
-    public String getAnio() {
-        return Anio;
-    }
-
-
-    public void setAnio(String anio) {
-        Anio = anio;
-    }
-
-    public String getTamanio() {
-        return Tamanio;
-    }
-
-
-    public void setTamanio(String tamanio) {
-        Tamanio = tamanio;
-    }
-
-    public String getCategoria() {
-        return Categoria;
-    }
-
-
-    public void setCategoria(String categoria) {
-        Categoria = categoria;
+    public void setMontoSin(float montosin) {
+        this.montosin = montosin;
     }
 
 }

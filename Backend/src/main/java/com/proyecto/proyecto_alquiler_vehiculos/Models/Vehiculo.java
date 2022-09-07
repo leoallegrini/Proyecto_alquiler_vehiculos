@@ -1,120 +1,126 @@
 package com.proyecto.proyecto_alquiler_vehiculos.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Vehiculo {
 
-    private int ID;
-    private String Marca;
-    private String Modelo;
-    private String Anio;
-    private String Patente;
-    private String Tamanio;
-    private boolean Transmision;
-    private String Categoria;
-    private Integer Precio_Alquiler;
-    private boolean Disponible;
-    private String Imagen;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idVehiculo;
+    
+    private int idempresa;
+    private String marca;
+    private String modelo;
+    private int anio;
+    private String patente;
+    private String tamanio;
+    private boolean transmision;
+    private String categoria;
+    private Float precioalquiler;
+    private boolean disponible;
+    private String imagen;
 
     public Vehiculo() {
     }
 
-    public Vehiculo(int Id, String marca, String modelo, String anio,
-            String tamanio, String categoria, Boolean disponible, Integer precio_Alquiler, String imagen) {
-        this.ID = Id;
-        this.Marca = marca;
-        this.Modelo = modelo;
-        this.Anio = anio;
-        this.Tamanio = tamanio;
-        this.Categoria = categoria;
-        this.Disponible = disponible;
-        this.Precio_Alquiler = precio_Alquiler;
-        this.Imagen = imagen;
+    public int getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public void setIdVehiculo(int idVehiculo) {
+        this.idVehiculo = idVehiculo;
+    }
+
+    public int getIdEmpresa() {
+        return idempresa;
+    }
+
+    public void setIdEmpresa(int idempresa) {
+        this.idempresa = idempresa;
     }
 
     public String getMarca() {
-        return Marca;
+        return marca;
     }
 
     public void setMarca(String marca) {
-        this.Marca = marca;
+        this.marca = marca;
     }
 
     public String getModelo() {
-        return Modelo;
+        return modelo;
     }
 
     public void setModelo(String modelo) {
-        this.Modelo = modelo;
+        this.modelo = modelo;
     }
 
-    public String getAnio() {
-        return Anio;
+    public int getAnio() {
+        return anio;
     }
 
-    public void setAnio(String anio) {
-        this.Anio = anio;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
     public String getPatente() {
-        return Patente;
+        return patente;
     }
 
     public void setPatente(String patente) {
-        this.Patente = patente;
+        this.patente = patente;
     }
 
     public String getTamanio() {
-        return Tamanio;
+        return tamanio;
     }
 
     public void setTamanio(String tamanio) {
-        this.Tamanio = tamanio;
+        this.tamanio = tamanio;
     }
 
     public boolean isTransmision() {
-        return Transmision;
+        return transmision;
     }
 
     public void setTransmision(boolean transmision) {
-        this.Transmision = transmision;
+        this.transmision = transmision;
     }
 
     public String getCategoria() {
-        return Categoria;
+        return categoria;
     }
 
     public void setCategoria(String categoria) {
-        this.Categoria = categoria;
+        this.categoria = categoria;
     }
 
-    public Integer getPrecio_Alquiler() {
-        return Precio_Alquiler;
+    public float getPrecioAlquiler() {
+        return precioalquiler;
     }
 
-    public void setPrecio_Alquiler(Integer precio_Alquiler) {
-        this.Precio_Alquiler = precio_Alquiler;
+    public void setPrecioAlquiler(float precioalquiler) {
+        this.precioalquiler = precioalquiler;
     }
 
     public boolean isDisponible() {
-        return Disponible;
+        return disponible;
     }
 
     public void setDisponible(boolean disponible) {
-        this.Disponible = disponible;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int id) {
-        this.ID = id;
+        this.disponible = disponible;
     }
 
     public String getImagen() {
-        return Imagen;
+        return imagen;
     }
 
     public void setImagen(String imagen) {
-        this.Imagen = imagen;
+        this.imagen = imagen;
     }
+
 }

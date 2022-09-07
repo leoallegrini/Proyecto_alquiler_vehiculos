@@ -1,139 +1,110 @@
 package com.proyecto.proyecto_alquiler_vehiculos.models;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Cliente {
 
-    private String Nombre;
-    private String Apellido;
-    private DateTimeFormat FechaNacimiento;
-    private String DNI;
-    private String cuit;
-    private String CorreoElectronico;
-    private String Celular;
-    private String Direccion;
-    private String CodPostal;
-    private String Nacionalidad;
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idcliente;
+
+    private String nombreape;
+    private String dni;
+    private String coreo;
+    private Date fechanac;
+    private String celular;
+    private String direccion;
+    private String codpostal;
+    private String nacionalidad;
+    private String password;
 
     public Cliente() {
     }
 
-
-    public Cliente(String nombre, String apellido, DateTimeFormat fechaNacimiento, String dni, String cuit,
-            String correoElectronico, String celular, String direccion, String codPostal, String nacionalidad) {
-        Nombre = nombre;
-        Apellido = apellido;
-        FechaNacimiento = fechaNacimiento;
-        DNI = dni;
-        this.cuit = cuit;
-        CorreoElectronico = correoElectronico;
-        Celular = celular;
-        Direccion = direccion;
-        CodPostal = codPostal;
-        Nacionalidad = nacionalidad;
+    public int getIdcliente() {
+        return idcliente;
     }
 
-
-    public String getNombre() {
-        return Nombre;
+    public void setIdcliente(int idcliente) {
+        this.idcliente = idcliente;
     }
 
-
-    public void setNombre(String nombre) {
-        Nombre = nombre;
+    public String getNombreApe() {
+        return nombreape;
     }
 
-
-    public String getApellido() {
-        return Apellido;
+    public void setNombreApe(String nombreape) {
+        this.nombreape = nombreape;
     }
 
-
-    public void setApellido(String apellido) {
-        Apellido = apellido;
+    public String getDni() {
+        return dni;
     }
 
-
-    public DateTimeFormat getFechaNacimiento() {
-        return FechaNacimiento;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
-
-    public void setFechaNacimiento(DateTimeFormat fechaNacimiento) {
-        FechaNacimiento = fechaNacimiento;
+    public String getCoreo() {
+        return coreo;
     }
 
-
-    public String getDNI() {
-        return DNI;
+    public void setCoreo(String coreo) {
+        this.coreo = coreo;
     }
 
-
-    public void setDNI(String dni) {
-        DNI = dni;
+    public Date getFechaNac() {
+        return fechanac;
     }
 
-
-    public String getCuit() {
-        return cuit;
+    public void setFechaNac(Date fechanac) {
+        this.fechanac = fechanac;
     }
-
-
-    public void setCuit(String cuit) {
-        this.cuit = cuit;
-    }
-
-
-    public String getCorreoElectronico() {
-        return CorreoElectronico;
-    }
-
-
-    public void setCorreoElectronico(String correoElectronico) {
-        CorreoElectronico = correoElectronico;
-    }
-
 
     public String getCelular() {
-        return Celular;
+        return celular;
     }
-
 
     public void setCelular(String celular) {
-        Celular = celular;
+        this.celular = celular;
     }
-
 
     public String getDireccion() {
-        return Direccion;
+        return direccion;
     }
-
 
     public void setDireccion(String direccion) {
-        Direccion = direccion;
+        this.direccion = direccion;
     }
 
-
-    public String getCodPostal() {
-        return CodPostal;
+    public String getCodpostal() {
+        return codpostal;
     }
 
-
-    public void setCodPostal(String codPostal) {
-        CodPostal = codPostal;
+    public void setCodpostal(String codpostal) {
+        this.codpostal = codpostal;
     }
-
 
     public String getNacionalidad() {
-        return Nacionalidad;
+        return nacionalidad;
     }
-
 
     public void setNacionalidad(String nacionalidad) {
-        Nacionalidad = nacionalidad;
+        this.nacionalidad = nacionalidad;
     }
 
-    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 }
