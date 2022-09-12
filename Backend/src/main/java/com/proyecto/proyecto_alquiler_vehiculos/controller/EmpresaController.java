@@ -2,7 +2,7 @@ package com.proyecto.proyecto_alquiler_vehiculos.controller;
 
 import java.util.List;
 
-import com.proyecto.proyecto_alquiler_vehiculos.Repository.EmpresaRepository;
+import com.proyecto.proyecto_alquiler_vehiculos.repository.EmpresaRepository;
 import com.proyecto.proyecto_alquiler_vehiculos.models.Empresa;
 
 import org.springframework.beans.factory.annotation.Autowired;

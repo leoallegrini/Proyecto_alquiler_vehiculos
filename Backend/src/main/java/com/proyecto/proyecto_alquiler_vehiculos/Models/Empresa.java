@@ -5,7 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Empresa {
 
     @Id
@@ -17,57 +24,5 @@ public class Empresa {
     private String cuit;
     private String celular;
     private boolean habilitado;
-
-    private Empresa() {
-
-    }
-
-    public int getIdEmpresa() {
-        return idempresa;
-    }
-
-    public void setIdEmpresa(int idempresa) {
-        this.idempresa = idempresa;
-    }
-
-    public String getNombreApe() {
-        return nombreape;
-    }
-
-    public void setNombreApe(String nombreape) {
-        this.nombreape = nombreape;
-    }
-
-    public String getRznScial() {
-        return rznscial;
-    }
-
-    public void setRznScial(String rznscial) {
-        this.rznscial = rznscial;
-    }
-
-    public String getCuit() {
-        return cuit;
-    }
-
-    public void setCuit(String cuit) {
-        this.cuit = cuit;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
-    public boolean isHabilitado() {
-        return habilitado;
-    }
-
-    public void setHabilitado(boolean habilitado) {
-        this.habilitado = habilitado;
-    }
 
 }

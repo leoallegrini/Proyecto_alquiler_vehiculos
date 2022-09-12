@@ -7,7 +7,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Cliente {
 
     @Id
@@ -23,88 +30,5 @@ public class Cliente {
     private String codpostal;
     private String nacionalidad;
     private String password;
-
-    public Cliente() {
-    }
-
-    public int getIdcliente() {
-        return idcliente;
-    }
-
-    public void setIdcliente(int idcliente) {
-        this.idcliente = idcliente;
-    }
-
-    public String getNombreApe() {
-        return nombreape;
-    }
-
-    public void setNombreApe(String nombreape) {
-        this.nombreape = nombreape;
-    }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getCoreo() {
-        return coreo;
-    }
-
-    public void setCoreo(String coreo) {
-        this.coreo = coreo;
-    }
-
-    public Date getFechaNac() {
-        return fechanac;
-    }
-
-    public void setFechaNac(Date fechanac) {
-        this.fechanac = fechanac;
-    }
-
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getCodpostal() {
-        return codpostal;
-    }
-
-    public void setCodpostal(String codpostal) {
-        this.codpostal = codpostal;
-    }
-
-    public String getNacionalidad() {
-        return nacionalidad;
-    }
-
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
 }
