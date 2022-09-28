@@ -5,6 +5,7 @@ import { VehiculoService } from '../services/vehiculo.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-registrar-alquiler-vehiculo',
   templateUrl: './registrar-alquiler-vehiculo.component.html',
@@ -27,13 +28,14 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
     this.alquiler.modelo = this.vehiculos.modelo;
     this.alquiler.anio = this.vehiculos.anio;
     this.alquiler.disponible = false;
-    this.alquiler.iD = this.vehiculos.id;
+    this.alquiler.iD = this.vehiculos.idvehiculo;
     this.alquiler.transmision = this.vehiculos.transmision;
     this.alquiler.tamanio = this.vehiculos.tamanio;
     this.alquiler.categoria = this.vehiculos.categoria;
 
     console.log(this.alquiler);
 
+    //https://www.youtube.com/watch?v=4F_dR7LOSmM --> arregle el suscribe
     this.vehiculoServicio.registrarAlquiler(this.alquiler).subscribe(dato => {
       //console.log(dato);
       this.actualizarVehiculo(this.vehiculos);
@@ -49,7 +51,7 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
   }
 
   actualizarVehiculo(vehiculo: Vehiculo){
-    this.vehiculoServicio.actualizarVehiculo(vehiculo.id).subscribe(dato => {
+    this.vehiculoServicio.actualizarVehiculo(vehiculo.idvehiculo).subscribe(dato => {
       this.vehiculos = dato;
     });
     alert("Su alquiler ha sido confirmado con éxito ");

@@ -1,6 +1,6 @@
 export class Vehiculo {
 
-  id:number;
+  idvehiculo:number;
   marca:string;
   modelo:string;
   anio:string;

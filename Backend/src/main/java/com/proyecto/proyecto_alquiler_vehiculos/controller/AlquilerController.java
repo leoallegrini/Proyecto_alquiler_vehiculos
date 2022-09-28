@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.proyecto.proyecto_alquiler_vehiculos.models.Alquiler;
+import com.proyecto.proyecto_alquiler_vehiculos.models.RegistroAlquiler;
 import com.proyecto.proyecto_alquiler_vehiculos.repository.AlquilerRepository;
 
 @RestController
@@ -21,7 +21,7 @@ public class AlquilerController {
 	
 	// Este metodo se encarga de registrar un alquiler
 	@PostMapping("/RegistrarAlquiler")
-	public Alquiler GuardarAlquiler(@RequestBody Alquiler nuevoAlquiler) {
+	public RegistroAlquiler GuardarAlquiler(@RequestBody RegistroAlquiler nuevoAlquiler) {
 
 		return repositorioAlq.save(nuevoAlquiler);
 	}
