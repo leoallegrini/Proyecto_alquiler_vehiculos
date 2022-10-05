@@ -19,11 +19,12 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idcliente;
+    private Long idcliente;
 
-    private String nombreape;
+    private String nombre;
+    private String apellido;
     private String dni;
-    private String coreo;
+    private String correo;
     private Date fechanac;
     private String celular;
     private String direccion;

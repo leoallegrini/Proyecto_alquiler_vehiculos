@@ -17,10 +17,11 @@ public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idempresa;
+    private Long idempresa;
     
-    private String nombreape;
-    private String rznscial;
+    private String nombre;
+    private String apellido;
+    private String razonsocial;
     private String cuit;
     private String celular;
     private boolean habilitado;

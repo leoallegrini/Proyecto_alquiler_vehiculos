@@ -19,14 +19,14 @@ public class RegistroAlquiler {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_vehiculo_alquilado;
+    private Long idregistroalquiler;
     
-    private int id_vehiculo;
-    private int id_cliente;
-    private Date fecha_inicio;
-    private Date fecha_fin;
+    private int idvehiculo;
+    private int idcliente;
+    private Date fechainicio;
+    private Date fechafin;
     private boolean siniestro;
-    private String det_siniestro;
-    private float monto_siniestro;
+    private String detsiniestro;
+    private float montosin;
 
 }
