@@ -67,6 +67,7 @@ public class VehiculoController {
 		return ResponseEntity.ok(vehiculoActualizado);
 	}
 
+	// Este metodo se encarga de deshabilitar un vehiculo
 	@PostMapping("/EliminarVehiculo/{id}")
 	public ResponseEntity<String> EliminarVehiculo(@PathVariable Long id) {
 
@@ -80,7 +81,7 @@ public class VehiculoController {
 		return ResponseEntity.ok("Vehiculo eliminado");
 	}
 
-	// Este metodo se encarga de registrar un alquiler
+	// Este metodo se encarga de registrar un nuevo vehiculo
 	@PostMapping("/RegistrarVehiculo")
 	public Vehiculo CrearVehiculo(@RequestBody Vehiculo nuevoVehiculo) {
 

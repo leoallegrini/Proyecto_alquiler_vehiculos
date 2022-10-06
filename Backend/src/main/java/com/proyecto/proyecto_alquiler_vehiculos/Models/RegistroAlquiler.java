@@ -18,7 +18,7 @@ import lombok.Setter;
 public class RegistroAlquiler {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idregistroalquiler;
     
     private int idvehiculo;
