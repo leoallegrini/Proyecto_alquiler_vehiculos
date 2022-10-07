@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,14 +36,35 @@ public class EmpresaController {
 	}
 
 	// Este metodo se encarga de registrar una nueva empresa
-	@PostMapping("/RegistrarEmpresa")
+	@PostMapping("/registrarEmpresa")
 	public Empresa CrearEmpresa(@RequestBody Empresa nuevaEmpresa) {
 
 		return repositorio.save(nuevaEmpresa);
 	}
 
+	// Este metodo se encarga de actualizar el estado de una empresa
+	@PutMapping("/actualizarEmpresa/{id}")
+	public ResponseEntity<Empresa> ActualizarEmpresa(@PathVariable Long id, @RequestBody Empresa nuevaEmpresa) {
+
+		Empresa empresa = repositorio.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundExceptions("No existe un cliente con el id: " + id));
+
+		empresa.setNombre(nuevaEmpresa.getNombre());
+		empresa.setApellido(nuevaEmpresa.getApellido());
+		empresa.setRazonsocial(nuevaEmpresa.getRazonsocial());
+		empresa.setCuit(nuevaEmpresa.getCuit());
+		empresa.setCelular(nuevaEmpresa.getCelular());
+		empresa.setHabilitado(nuevaEmpresa.isHabilitado());
+		empresa.setCorreo(nuevaEmpresa.getCorreo());
+		empresa.setPassword(nuevaEmpresa.getPassword());
+
+		Empresa empresaActualizada = repositorio.save(empresa);
+
+		return ResponseEntity.ok(empresaActualizada);
+	}
+
 	//Este metodo se encarga de deshabilitar una empresa
-	@PostMapping("/EliminarEmpresa/{id}")
+	@PostMapping("/eliminarEmpresa/{id}")
 	public ResponseEntity<String> EliminarEmpresa(@PathVariable Long id) {
 
 		Empresa empresa = repositorio.findById(id)
