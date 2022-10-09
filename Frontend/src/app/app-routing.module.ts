@@ -4,11 +4,15 @@ import { AppComponent } from './app.component';
 import { ListaVehiculosComponent } from './lista-vehiculos/lista-vehiculos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 const routes: Routes = [
   {path : 'vehiculos', component:ListaVehiculosComponent},
   {path : '', component:HomeComponent},
-  {path: 'registrar-alquiler/:id',component:RegistrarAlquilerVehiculoComponent}
+  {path: 'registrar-alquiler/:id',component:RegistrarAlquilerVehiculoComponent},
+  {path: 'login',component:LoginComponent},
+  {path: 'registro',component:RegistroComponent}
 ];
 
 @NgModule({

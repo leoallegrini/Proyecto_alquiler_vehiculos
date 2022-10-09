@@ -1,5 +1,6 @@
 package com.proyecto.proyecto_alquiler_vehiculos.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name= "idempresa")
     private Long idempresa;
     
     private String nombre;
@@ -25,5 +27,8 @@ public class Empresa {
     private String cuit;
     private String celular;
     private boolean habilitado;
+    private String correo;
+    private String password;
+    private int rol = 2;
 
 }

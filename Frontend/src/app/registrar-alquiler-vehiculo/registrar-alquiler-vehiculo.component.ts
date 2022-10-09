@@ -1,9 +1,8 @@
-import { Alquiler } from '../classes/alquiler';
-import { Vehiculo } from '../classes/vehiculo';
 import { Component, OnInit} from '@angular/core';
 import { VehiculoService } from '../services/vehiculo.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { Vehiculo,Alquiler } from '../interfaces/interfaces';
 
 
 @Component({
@@ -24,14 +23,7 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
   }
 
   guardarAlquiler(){
-    this.alquiler.marca = this.vehiculos.marca;
-    this.alquiler.modelo = this.vehiculos.modelo;
-    this.alquiler.anio = this.vehiculos.anio;
-    this.alquiler.disponible = false;
-    this.alquiler.iD = this.vehiculos.idvehiculo;
-    this.alquiler.transmision = this.vehiculos.transmision;
-    this.alquiler.tamanio = this.vehiculos.tamanio;
-    this.alquiler.categoria = this.vehiculos.categoria;
+    this.alquiler.idvehiculo = this.vehiculos.idvehiculo;
 
     console.log(this.alquiler);
 

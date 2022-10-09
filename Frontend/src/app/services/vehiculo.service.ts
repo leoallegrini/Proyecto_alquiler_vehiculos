@@ -1,8 +1,8 @@
-import { Alquiler } from '../classes/alquiler';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Vehiculo } from '../classes/vehiculo';
+import { Alquiler,Vehiculo } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'

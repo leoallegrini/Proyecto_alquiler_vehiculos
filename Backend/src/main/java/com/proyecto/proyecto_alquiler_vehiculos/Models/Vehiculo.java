@@ -1,5 +1,6 @@
 package com.proyecto.proyecto_alquiler_vehiculos.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class Vehiculo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name= "idvehiculo")
     private Long idvehiculo;
     
     private int idempresa;
