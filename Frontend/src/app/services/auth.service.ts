@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, observable } from 'rxjs';
 import { Cliente } from '../interfaces/interfaces';
 
 @Injectable({
@@ -12,8 +12,8 @@ export class AuthService {
   constructor(private httpClient : HttpClient) { }
   auth = new Subject();
 
-  login(){
-
+  login(correo:String,pass:String):Observable<object>{
+    return this.httpClient.get(`${this.baseUrl}/clientes/loginCliente?correo=${correo}&pass=${pass}`)
   }
 
   //Este metodo registra el alquiler de un vehiculo

@@ -25,8 +25,4 @@ export class RegistroComponent implements OnInit {
     this.router.navigate(link);
   }
 
-  onSubmit(){
-    this.crearCliente();
-  }
-
 }

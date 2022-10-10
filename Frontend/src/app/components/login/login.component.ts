@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Cliente } from 'src/app/interfaces/interfaces';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,16 +11,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  cliente:Cliente = new Cliente();
+
+  constructor(private router: Router,private loginService:AuthService) { }
 
   ngOnInit(): void {
   }
 
-  login(form:NgForm){
-    const correo = form.value.email;
+  login(){
+    let link = ['']
+    this.loginService.login(this.cliente.correo,this.cliente.password).subscribe({
+      next: (v) => {alert("Ingresaste correctamente"),this.router.navigate(link)},
+      error: (e) => alert("El correo electronico ingresao o la contraseña no son correctos")
+    });
 
-    const pass = form.value.password;
   }
+
   registro() {
     let link = ['/registro'];
     this.router.navigate(link);

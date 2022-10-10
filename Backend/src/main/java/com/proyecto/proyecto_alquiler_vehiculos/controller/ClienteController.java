@@ -7,6 +7,7 @@ import com.proyecto.proyecto_alquiler_vehiculos.exceptions.ResourceNotFoundExcep
 import com.proyecto.proyecto_alquiler_vehiculos.models.Cliente;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -63,4 +64,17 @@ public class ClienteController {
 
 		return ResponseEntity.ok(clienteActualizado);
 	}
+
+	@GetMapping("/loginCliente")
+	public ResponseEntity<Cliente> LoginCliente(String correo, String pass){
+
+		Cliente cliente = repositorio.findByCorreo(correo).orElseThrow(() -> new ResourceNotFoundExceptions("No existe un cliente con el correo ingresado "+ correo));
+
+		if(cliente.getPassword().equals(pass)){
+			return ResponseEntity.ok(cliente);
+		}else{
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+		}
+	}
+	
 }

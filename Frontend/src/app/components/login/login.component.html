@@ -1,14 +1,14 @@
 <header class="masthead">
   <div class="container">
     <h2 style="text-shadow: 2px 0 #000; color:gold">Ingresar</h2>
-    <form>
+    <form (ngSubmit)= "login()">
       <div>
-        <input type="email" name="email" placeholder="Email">
+        <input type="email" name="email" placeholder="Email" [(ngModel)]="cliente.correo">
 
       </div>
 
       <div style="margin-bottom:10px ;">
-        <input type="password" name="password" placeholder="Contraseña">
+        <input type="password" name="password" placeholder="Contraseña" [(ngModel)]="cliente.password">
 
       </div>
 

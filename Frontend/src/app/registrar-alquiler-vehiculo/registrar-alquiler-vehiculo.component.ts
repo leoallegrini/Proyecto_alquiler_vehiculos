@@ -27,11 +27,10 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
 
     console.log(this.alquiler);
 
-    //https://www.youtube.com/watch?v=4F_dR7LOSmM --> arregle el suscribe
-    this.vehiculoServicio.registrarAlquiler(this.alquiler).subscribe(dato => {
-      //console.log(dato);
-      this.actualizarVehiculo(this.vehiculos);
-    }, error => console.log(error));
+    this.vehiculoServicio.registrarAlquiler(this.alquiler).subscribe({
+      next: (v) => this.actualizarVehiculo(this.vehiculos),
+      error: (e) => console.log(e)
+    });
   }
 
   private mostrarVehiculos(cod: string){
