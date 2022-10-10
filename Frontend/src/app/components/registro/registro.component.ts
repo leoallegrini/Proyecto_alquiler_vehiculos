@@ -1,6 +1,7 @@
 import { Cliente } from './../../interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -11,7 +12,7 @@ export class RegistroComponent implements OnInit {
 
   cliente:Cliente = new Cliente();
 
-  constructor(private authorizationService:AuthService) { }
+  constructor(private router: Router,private authorizationService:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,8 @@ export class RegistroComponent implements OnInit {
     this.authorizationService.registrarCliente(this.cliente).subscribe();
 
     alert("Su registro ha sido realizado con éxito ");
+    let link = [''];
+    this.router.navigate(link);
   }
 
   onSubmit(){
