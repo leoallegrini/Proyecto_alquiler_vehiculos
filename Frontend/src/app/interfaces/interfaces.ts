@@ -27,7 +27,7 @@ export class Cliente {
   codpostal:String;
   nacionalidad:String;
   password:String;
-
+  rol:number;
 
 }
 

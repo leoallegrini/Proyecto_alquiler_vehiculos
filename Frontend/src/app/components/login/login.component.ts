@@ -12,17 +12,18 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
 
   cliente:Cliente = new Cliente();
+  logged:boolean;
 
   constructor(private router: Router,private loginService:AuthService) { }
 
   ngOnInit(): void {
   }
 
-  login(){
-    let link = ['']
-    this.loginService.login(this.cliente.correo,this.cliente.password).subscribe({
-      next: (v) => {alert("Ingresaste correctamente"),this.router.navigate(link)},
-      error: (e) => alert("El correo electronico ingresao o la contraseña no son correctos")
+  loginCliente(){
+    let link = [''];
+    this.loginService.loginCliente(this.cliente.correo,this.cliente.password).subscribe({
+      next: (v) => {alert("Bienvenido!"),this.router.navigate(link),this.cliente.rol = 1},
+      error: (e) => alert("El correo electronico ingresado o la contraseña no son correctos")
     });
 
   }
@@ -32,4 +33,10 @@ export class LoginComponent implements OnInit {
     this.router.navigate(link);
   }
 
+  logout(){
+    alert("Hasta luego!");
+    this.cliente.rol = 0;
+    let link = [''];
+    this.router.navigate(link);
+  }
 }

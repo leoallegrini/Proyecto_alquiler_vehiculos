@@ -12,14 +12,17 @@ export class AuthService {
   constructor(private httpClient : HttpClient) { }
   auth = new Subject();
 
-  login(correo:String,pass:String):Observable<object>{
+  //Este metodo valida e ingresa un cliente
+  loginCliente(correo:String,pass:String):Observable<object>{
     return this.httpClient.get(`${this.baseUrl}/clientes/loginCliente?correo=${correo}&pass=${pass}`)
   }
 
-  //Este metodo registra el alquiler de un vehiculo
+  //Este metodo registra el alquiler de un cliente
   registrarCliente(cliente:Cliente):Observable<object>{
     return this.httpClient.post(`${this.baseUrl}/clientes/RegistrarCliente`,cliente)
 
   }
+
+
 
 }
