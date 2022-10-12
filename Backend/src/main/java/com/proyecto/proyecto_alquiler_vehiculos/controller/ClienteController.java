@@ -36,7 +36,7 @@ public class ClienteController {
 	}
 
 	// Este metodo se encarga de registrar un nuevo cliente
-	@PostMapping("/RegistrarCliente")
+	@PostMapping("/registrarCliente")
 	public Cliente CrearCliente(@RequestBody Cliente nuevoCliente) {
 
 		return repositorio.save(nuevoCliente);

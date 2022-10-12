@@ -27,6 +27,7 @@ public class Empresa {
     private String cuit;
     private String celular;
     private boolean habilitado;
+    @Column(name = "correo",unique = true)
     private String correo;
     private String password;
     private int rol = 2;

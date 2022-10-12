@@ -1,14 +1,14 @@
+import { Empresa } from './../../interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Empresa } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-regitro-empresa',
-  templateUrl: './regitro-empresa.component.html',
-  styleUrls: ['./regitro-empresa.component.css']
+  selector: 'app-login-empresa',
+  templateUrl: './login-empresa.component.html',
+  styleUrls: ['./login-empresa.component.css']
 })
-export class RegitroEmpresaComponent implements OnInit {
+export class LoginEmpresaComponent implements OnInit {
 
   empresa:Empresa = new Empresa();
 
@@ -17,14 +17,18 @@ export class RegitroEmpresaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  crearEmpresa(){
-    this.loginService.registrarEmpresa(this.empresa).subscribe();
-
-    alert("Su registro ha sido realizado con éxito ");
+  loginEmpresa(){
     let link = [''];
     this.loginService.loginEmpresa(this.empresa.correo,this.empresa.password).subscribe({
       next: (v) => {alert("Bienvenido!"),this.router.navigate(link),this.loginService.login()},
       error: (e) => alert("El correo electronico ingresado o la contraseña no son correctos")
     });
+
   }
+
+  registro() {
+    let link = ['/registroEmpresa'];
+    this.router.navigate(link);
+  }
+
 }

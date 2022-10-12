@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { RegitroEmpresaComponent } from './components/regitro-empresa/regitro-empresa.component';
+import { LoginEmpresaComponent } from './components/login-empresa/login-empresa.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegitroEmpresaComponent } from './components/regitro-empresa/regitro-em
     RegistrarAlquilerVehiculoComponent,
     LoginComponent,
     RegistroComponent,
-    RegitroEmpresaComponent
+    RegitroEmpresaComponent,
+    LoginEmpresaComponent
   ],
   imports: [
     BrowserModule,

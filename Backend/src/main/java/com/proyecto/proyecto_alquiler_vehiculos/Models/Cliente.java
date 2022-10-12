@@ -27,6 +27,7 @@ public class Cliente {
     private String apellido;
     private String dni;
     private String cuit;
+    @Column(name = "correo",unique = true)
     private String correo;
     private Date fechanac;
     private String celular;

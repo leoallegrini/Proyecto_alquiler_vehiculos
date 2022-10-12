@@ -5,9 +5,15 @@
     <a
       routerLink="vehiculos"
       routerLinkActive="active"
-      class="btn btn-primary btn-xl text-uppercase"
+      class="btn btn-primary btn-xl text-uppercase" *ngIf="tipoUsuario() != 2"
       >ELEGÍ TU VEHICULO</a
     >
+    <a
+      routerLink="vehiculos"
+      routerLinkActive="active"
+      class="btn btn-primary btn-xl text-uppercase" *ngIf="tipoUsuario() == 2"
+      >INGRESÁ TU VEHICULO
+    </a>
   </div>
 </header>
 

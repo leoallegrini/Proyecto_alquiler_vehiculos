@@ -23,7 +23,7 @@ export class RegistroComponent implements OnInit {
     alert("Su registro ha sido realizado con éxito ");
     let link = [''];
     this.loginService.loginCliente(this.cliente.correo,this.cliente.password).subscribe({
-      next: (v) => {alert("Bienvenido!"),this.router.navigate(link),this.cliente.rol = 1,this.loginService.login()},
+      next: (v) => {alert("Bienvenido!"),this.router.navigate(link),this.loginService.login()},
       error: (e) => alert("El correo electronico ingresado o la contraseña no son correctos")
     });
 

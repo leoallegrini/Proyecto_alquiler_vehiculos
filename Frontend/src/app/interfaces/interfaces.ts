@@ -38,3 +38,14 @@ export class Alquiler {
   fechainicio:Date;
   fechafin:Date;
 }
+
+export class Empresa {
+  nombre:String;
+  apellido:String;
+  razonsocial:String;
+  cuit:number;
+  celular:number;
+  habilitado:boolean;
+  correo:String;
+  password:String;
+}

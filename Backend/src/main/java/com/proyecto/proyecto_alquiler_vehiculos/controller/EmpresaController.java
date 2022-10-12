@@ -7,6 +7,7 @@ import com.proyecto.proyecto_alquiler_vehiculos.exceptions.ResourceNotFoundExcep
 import com.proyecto.proyecto_alquiler_vehiculos.models.Empresa;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,7 +39,7 @@ public class EmpresaController {
 	// Este metodo se encarga de registrar una nueva empresa
 	@PostMapping("/registrarEmpresa")
 	public Empresa CrearEmpresa(@RequestBody Empresa nuevaEmpresa) {
-
+		nuevaEmpresa.setHabilitado(true);
 		return repositorio.save(nuevaEmpresa);
 	}
 
@@ -75,5 +76,17 @@ public class EmpresaController {
 		repositorio.save(empresa);
 
 		return ResponseEntity.ok("Empresa eliminada");
+	}
+
+	@GetMapping("/loginEmpresa")
+	public ResponseEntity<Empresa> LoginEmpresa(String correo, String pass){
+
+		Empresa empresa = repositorio.findByCorreo(correo).orElseThrow(() -> new ResourceNotFoundExceptions("No existe un cliente con el correo ingresado "+ correo));
+
+		if(empresa.getPassword().equals(pass)){
+			return ResponseEntity.ok(empresa);
+		}else{
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+		}
 	}
 }
