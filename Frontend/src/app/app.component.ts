@@ -9,8 +9,16 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'RentalsVenado';
 
-  constructor(){
+  constructor(private loginService:AuthService){
 
+  }
+
+  Logout(){
+    this.loginService.logout();
+  }
+
+  estaLogueado(){
+    return this.loginService.estaLogueado();
   }
 
 

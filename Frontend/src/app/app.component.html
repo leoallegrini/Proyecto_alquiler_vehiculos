@@ -16,7 +16,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="!estaLogueado()">
             <a class="nav-link" href="/login">Registrar/Ingresar</a>
           </li>
           <li class="nav-item">
@@ -29,8 +29,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#nosotros">Sobre nosotros</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Cerrar sesion</a>
+          <li class="nav-item" *ngIf="estaLogueado()">
+            <a class="nav-link" href="" (click)="Logout()">Cerrar sesion</a>
           </li>
         </ul>
       </div>

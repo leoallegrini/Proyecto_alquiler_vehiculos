@@ -10,6 +10,7 @@ import { RegistrarAlquilerVehiculoComponent } from './registrar-alquiler-vehicul
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { RegitroEmpresaComponent } from './components/regitro-empresa/regitro-empresa.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegistroComponent } from './components/registro/registro.component';
     HomeComponent,
     RegistrarAlquilerVehiculoComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    RegitroEmpresaComponent
   ],
   imports: [
     BrowserModule,
