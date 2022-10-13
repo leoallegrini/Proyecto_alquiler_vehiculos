@@ -31,4 +31,8 @@ export class VehiculoService {
      return this.httpClient.post(`${this.baseUrl}/RegistrarAlquiler`,alquiler)
    }
 
+   crearVehiculo(vehiculo:Vehiculo):Observable<object>{
+    return this.httpClient.post(`${this.baseUrl}/RegistrarVehiculo`,vehiculo)
+   }
+
 }

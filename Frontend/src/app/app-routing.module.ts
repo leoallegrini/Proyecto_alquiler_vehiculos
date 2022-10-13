@@ -7,9 +7,11 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { RegitroEmpresaComponent } from './components/regitro-empresa/regitro-empresa.component';
 import { LoginEmpresaComponent } from './components/login-empresa/login-empresa.component';
+import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 
 const routes: Routes = [
   {path : 'vehiculos', component:ListaVehiculosComponent},
+  {path: 'ingresarvehiculo',component:VehiculosComponent},
   {path : '', component:HomeComponent},
   {path: 'registrar-alquiler/:id',component:RegistrarAlquilerVehiculoComponent},
   {path: 'login',component:LoginComponent},

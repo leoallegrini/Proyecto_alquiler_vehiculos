@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { RegitroEmpresaComponent } from './components/regitro-empresa/regitro-empresa.component';
 import { LoginEmpresaComponent } from './components/login-empresa/login-empresa.component';
+import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginEmpresaComponent } from './components/login-empresa/login-empresa.
     LoginComponent,
     RegistroComponent,
     RegitroEmpresaComponent,
-    LoginEmpresaComponent
+    LoginEmpresaComponent,
+    VehiculosComponent
   ],
   imports: [
     BrowserModule,
