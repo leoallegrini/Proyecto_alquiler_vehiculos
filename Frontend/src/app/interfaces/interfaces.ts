@@ -7,7 +7,7 @@ export class Vehiculo {
   anio:string;
   disponible: boolean;
   precioalquiler:number;
-  imagen:String;
+  imagen:string;
   patente: string;
   tamanio: string;
   transmision:boolean;
@@ -16,17 +16,17 @@ export class Vehiculo {
 
 export class Cliente {
 
-  nombre:String;
-  apellido:String;
-  dni:String;
-  cuit:String;
-  correo:String;
+  nombre:string;
+  apellido:string;
+  dni:string;
+  cuit:string;
+  correo:string;
   fechanac:Date;
-  celular:String;
-  direccion:String;
-  codpostal:String;
-  nacionalidad:String;
-  password:String;
+  celular:string;
+  direccion:string;
+  codpostal:string;
+  nacionalidad:string;
+  password:string;
   rol:number;
 
 }
@@ -40,12 +40,12 @@ export class Alquiler {
 }
 
 export class Empresa {
-  nombre:String;
-  apellido:String;
-  razonsocial:String;
+  nombre:string;
+  apellido:string;
+  razonsocial:string;
   cuit:number;
   celular:number;
   habilitado:boolean;
-  correo:String;
-  password:String;
+  correo:string;
+  password:string;
 }

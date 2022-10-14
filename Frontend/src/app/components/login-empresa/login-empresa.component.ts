@@ -20,8 +20,8 @@ export class LoginEmpresaComponent implements OnInit {
   loginEmpresa(){
     let link = [''];
     this.loginService.loginEmpresa(this.empresa.correo,this.empresa.password).subscribe({
-      next: (v) => {alert("Bienvenido!"),this.router.navigate(link),this.loginService.login()},
-      error: (e) => alert("El correo electronico ingresado o la contraseña no son correctos")
+      next: (v:any) => {alert("Bienvenido!"),this.router.navigate(link),this.loginService.setToken(v.password),this.loginService.SetIdUser(v.idempresa)},
+      error: (e:any) => {alert("El correo electronico ingresado o la contraseña no son correctos"),console.log(e)}
     });
 
   }

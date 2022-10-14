@@ -28,7 +28,7 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
     console.log(this.alquiler);
 
     this.vehiculoServicio.registrarAlquiler(this.alquiler).subscribe({
-      next: (v) => this.actualizarVehiculo(this.vehiculos),
+      next: (v) => this.deshabilitarVehiculo(this.vehiculos),
       error: (e) => console.log(e)
     });
   }
@@ -41,8 +41,8 @@ export class RegistrarAlquilerVehiculoComponent implements OnInit {
     })
   }
 
-  actualizarVehiculo(vehiculo: Vehiculo){
-    this.vehiculoServicio.actualizarVehiculo(vehiculo.idvehiculo).subscribe(dato => {
+  deshabilitarVehiculo(vehiculo: Vehiculo){
+    this.vehiculoServicio.deshabilitarVehiculo(vehiculo.idvehiculo).subscribe(dato => {
       this.vehiculos = dato;
     });
     alert("Su alquiler ha sido confirmado con éxito ");

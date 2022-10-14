@@ -84,7 +84,7 @@ public class VehiculoController {
 	// Este metodo se encarga de registrar un nuevo vehiculo
 	@PostMapping("/RegistrarVehiculo")
 	public Vehiculo CrearVehiculo(@RequestBody Vehiculo nuevoVehiculo) {
-
+		nuevoVehiculo.setDisponible(true);
 		return repositorioV.save(nuevoVehiculo);
 	}
 

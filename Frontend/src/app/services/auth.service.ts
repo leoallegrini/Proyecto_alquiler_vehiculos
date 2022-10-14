@@ -35,16 +35,28 @@ export class AuthService {
     return this.httpClient.get(`${this.baseUrl}/empresas/loginEmpresa?correo=${correo}&pass=${pass}`)
   }
 
-  logout(){
-    this.logged = false;
-    this.rol = 0;
-  }
-  login(){
-    this.logged = true;
+  setToken(input:string){
+	  localStorage.setItem("token",input);
   }
 
-  estaLogueado(){
-    return this.logged;
+  getToken():any {
+	  return localStorage.getItem("token");
+  }
+
+  SetIdUser(id:any){
+	  return localStorage.setItem("iduser",id);
+  }
+
+  getIdUser():any{
+	  return localStorage.getItem("iduser");
+  }
+
+  clear(){
+	  localStorage.clear();
+  }
+
+  isLogged(){
+	  return localStorage.getItem("token") ? true : false;
   }
 
   tipoUsuario(){
