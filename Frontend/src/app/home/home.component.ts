@@ -14,6 +14,6 @@ export class HomeComponent implements OnInit {
   }
 
   tipoUsuario(){
-    return this.loginService.tipoUsuario();
+    return this.loginService.getIdRol();
   }
 }

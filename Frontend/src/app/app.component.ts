@@ -21,5 +21,9 @@ export class AppComponent {
     return this.loginService.isLogged();
   }
 
+  tipoUsuario(){
+    return this.loginService.getIdRol();
+  }
+
 
 }

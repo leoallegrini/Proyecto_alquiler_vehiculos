@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { VehiculoService } from '../services/vehiculo.service';
 import { Router } from '@angular/router';
@@ -13,7 +14,8 @@ export class ListaVehiculosComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private vehiculoServicio: VehiculoService
+    private vehiculoServicio: VehiculoService,
+    private loginService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -22,9 +24,16 @@ export class ListaVehiculosComponent implements OnInit {
 
 
   private obtenerVehiculos() {
-    this.vehiculoServicio.obtenerListaVehiculos().subscribe((dato) => {
-      this.vehiculos = dato;
-    });
+    if(this.loginService.getIdRol() == 2){
+      this.vehiculoServicio.obtenerListaVehiculosEmpresa(this.loginService.getIdUser()).subscribe((dato) =>{
+        this.vehiculos = dato;
+      })
+    }else{
+      this.vehiculoServicio.obtenerListaVehiculos().subscribe((dato) => {
+        this.vehiculos = dato;
+      });
+    }
+
   }
 
 
@@ -32,4 +41,14 @@ export class ListaVehiculosComponent implements OnInit {
     let link = ['/registrar-alquiler', vehiculo.idvehiculo];
     this.router.navigate(link);
   }
+
+  ModificarVehiculo(vehiculo: Vehiculo) {
+    let link = ['/modificarVehiculo', vehiculo.idvehiculo];
+    this.router.navigate(link);
+  }
+
+  tipoUsuario(){
+    return this.loginService.getIdRol();
+  }
+
 }

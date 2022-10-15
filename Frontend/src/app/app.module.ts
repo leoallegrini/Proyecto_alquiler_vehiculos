@@ -13,6 +13,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { RegitroEmpresaComponent } from './components/regitro-empresa/regitro-empresa.component';
 import { LoginEmpresaComponent } from './components/login-empresa/login-empresa.component';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
+import { ModificarVehiculoComponent } from './components/modificar-vehiculo/modificar-vehiculo.component';
+import { EmpresaModificarComponent } from './components/empresa-modificar/empresa-modificar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
     RegistroComponent,
     RegitroEmpresaComponent,
     LoginEmpresaComponent,
-    VehiculosComponent
+    VehiculosComponent,
+    ModificarVehiculoComponent,
+    EmpresaModificarComponent
   ],
   imports: [
     BrowserModule,

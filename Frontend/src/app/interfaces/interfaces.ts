@@ -40,6 +40,7 @@ export class Alquiler {
 }
 
 export class Empresa {
+  idempresa:number;
   nombre:string;
   apellido:string;
   razonsocial:string;

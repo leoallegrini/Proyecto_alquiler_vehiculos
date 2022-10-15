@@ -23,7 +23,7 @@ export class RegitroEmpresaComponent implements OnInit {
     alert("Su registro ha sido realizado con éxito ");
     let link = [''];
     this.loginService.loginEmpresa(this.empresa.correo,this.empresa.password).subscribe({
-      next: (v:any) => {alert("Bienvenido!"),this.router.navigate(link),this.loginService.setToken(v.password),this.loginService.SetIdUser(v.idempresa)},
+      next: (v:any) => {alert("Bienvenido!"),this.router.navigate(link),this.loginService.setToken(v.password),this.loginService.SetIdUser(v.idempresa),this.loginService.setIdRol(v.rol)},
       error: (e:any) => {alert("El correo electronico ingresado o la contraseña no son correctos"),console.log(e)}
     });
   }

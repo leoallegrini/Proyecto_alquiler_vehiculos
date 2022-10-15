@@ -1,8 +1,8 @@
 <header class="masthead">
   <div class="col-md-6 offset-md-3">
     <h1 style="text-shadow: 2px 0 #000; color:gold">Rentals Venado</h1>
-    <h3 class="text-center" style="color: gold; text-shadow: 2px 0 #000;">Creación de vehículo</h3>
-    <form (ngSubmit)= "crearVehiculo()" #alquilerForm = "ngForm">
+    <h3 class="text-center" style="color: gold; text-shadow: 2px 0 #000;">Modificación de vehículo</h3>
+    <form (ngSubmit)= "modificarVehiculo()" #alquilerForm = "ngForm">
       <div class="row" style="text-shadow: 2px 0 #000; color: gold">
         <div class="col">
           <div class="form-group">
@@ -10,7 +10,7 @@
             <input type="text"
             class="form-control"
             id="marca"
-            [(ngModel)] = "vehiculo.marca"
+            [(ngModel)] = "vehiculoSeleccionado.marca"
             name="marca"
             required
             minlength="4"
@@ -31,7 +31,7 @@
             <input type="text"
             class="form-control"
             id="modelo"
-            [(ngModel)] = "vehiculo.modelo"
+            [(ngModel)] = "vehiculoSeleccionado.modelo"
             name="modelo"
             required
             minlength="2"
@@ -54,7 +54,7 @@
             required
             class="form-control"
             id="anio"
-            [(ngModel)] = "vehiculo.anio"
+            [(ngModel)] = "vehiculoSeleccionado.anio"
             name="anio"
             required
             minlength="4"
@@ -74,7 +74,7 @@
             placeholder="Ingresa la imagen del vehiculo"
             class="form-control"
             id="imagen"
-            [(ngModel)] = "vehiculo.imagen"
+            [(ngModel)] = "vehiculoSeleccionado.imagen"
             name="imagen"
             required
             minlength="8"
@@ -96,7 +96,7 @@
             placeholder="Ingresa la patente"
             class="form-control"
             id="patente"
-            [(ngModel)] = "vehiculo.patente"
+            [(ngModel)] = "vehiculoSeleccionado.patente"
             name="patente"
             required
             minlength="6"
@@ -116,7 +116,7 @@
             placeholder="Ingresa el tamaño"
             class="form-control"
             id="tamanio"
-            [(ngModel)] = "vehiculo.tamanio"
+            [(ngModel)] = "vehiculoSeleccionado.tamanio"
             name="tamanio"
             required
             minlength="4"
@@ -136,7 +136,7 @@
             placeholder="Ingresa el tipo de transmision"
             class="form-control"
             id="transmision"
-            [(ngModel)] = "vehiculo.transmision"
+            [(ngModel)] = "vehiculoSeleccionado.transmision"
             name="transmision"
             required
             minlength="1"
@@ -156,7 +156,7 @@
             placeholder="Ingresa tu categoria"
             class="form-control"
             id="categoria"
-            [(ngModel)] = "vehiculo.categoria"
+            [(ngModel)] = "vehiculoSeleccionado.categoria"
             name="categoria"
             required
             minlength="4"
@@ -177,7 +177,7 @@
             placeholder="Ingresa el precio"
             class="form-control"
             id="precio"
-            [(ngModel)] = "vehiculo.precioalquiler"
+            [(ngModel)] = "vehiculoSeleccionado.precioalquiler"
             name="precio"
             required
             minlength="4"
@@ -194,7 +194,7 @@
       </div>
       <button class="btn btn-success"
       style="float: right;" [disabled]= "!alquilerForm.form.valid">
-      Confirmar ingreso</button>
+      Confirmar modificacion</button>
     </form>
   </div>
 </header>

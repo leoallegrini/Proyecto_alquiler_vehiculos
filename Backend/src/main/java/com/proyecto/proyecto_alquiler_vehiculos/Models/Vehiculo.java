@@ -21,7 +21,8 @@ public class Vehiculo {
     @Column(name= "idvehiculo")
     private Long idvehiculo;
     
-    private int idempresa;
+    @Column(name = "idempresa")
+    private Long idempresa;
     private String marca;
     private String modelo;
     private int anio;
