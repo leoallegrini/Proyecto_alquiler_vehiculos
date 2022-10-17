@@ -1,6 +1,6 @@
+import { Cliente } from './../../interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Cliente } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -20,9 +20,10 @@ export class LoginComponent implements OnInit {
   loginCliente(){
     let link = [''];
     this.loginService.loginCliente(this.cliente.correo,this.cliente.password).subscribe({
-      next: (v) => {alert("Bienvenido!"),this.router.navigate(link),this.cliente.rol = 1,this.loginService.login()},
-      error: (e) => alert("El correo electronico ingresado o la contraseña no son correctos")
+      next: (v:any) => {alert("Bienvenido!"),this.router.navigate(link),this.loginService.setToken(v.password),this.loginService.SetIdUser(v.idcliente),this.loginService.setIdRol(v.rol)},
+      error: (e:any) => {alert("El correo electronico ingresado o la contraseña no son correctos"),console.log(e)}
     });
+
 
   }
 

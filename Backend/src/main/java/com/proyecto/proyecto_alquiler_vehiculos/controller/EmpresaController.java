@@ -3,8 +3,10 @@ package com.proyecto.proyecto_alquiler_vehiculos.controller;
 import java.util.List;
 
 import com.proyecto.proyecto_alquiler_vehiculos.repository.EmpresaRepository;
+import com.proyecto.proyecto_alquiler_vehiculos.repository.VehiculoRepository;
 import com.proyecto.proyecto_alquiler_vehiculos.exceptions.ResourceNotFoundExceptions;
 import com.proyecto.proyecto_alquiler_vehiculos.models.Empresa;
+import com.proyecto.proyecto_alquiler_vehiculos.models.Vehiculo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,6 +30,9 @@ public class EmpresaController {
 
     @Autowired
 	private EmpresaRepository repositorio;
+	
+	@Autowired
+	private VehiculoRepository repositoriov;
 
 	//Este metodo lista todos los vehiculos
 	@GetMapping("/lista")
@@ -35,6 +40,27 @@ public class EmpresaController {
 
 		return repositorio.findAll();
 	}
+
+	// Este método se encarga de obtener una empresa
+	@GetMapping("/ObtenerEmpresa/{id}")
+	public ResponseEntity<Empresa> ObtenerEmpresa(@PathVariable Long id) {
+
+		Empresa empresa = repositorio.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundExceptions("No existe una empresa con el id: " + id));
+
+		return ResponseEntity.ok(empresa);
+	}
+
+	// Este método se encarga de obtener una empresa
+	@GetMapping("/ObtenerVehiculos/{id}")
+	public List<Vehiculo> obtenerVehiculos(@PathVariable Long id) {
+
+		repositorio.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundExceptions("No existe una empresa con el id: " + id));
+
+		return repositoriov.findAllByidempresa(id);
+	}
+	
 
 	// Este metodo se encarga de registrar una nueva empresa
 	@PostMapping("/registrarEmpresa")

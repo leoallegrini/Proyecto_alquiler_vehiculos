@@ -23,7 +23,7 @@ public class RegistroAlquiler {
     @Column(name= "idregistroalquiler")
     private Long idregistroalquiler;
     
-    private int idvehiculo;
+    private Long idvehiculo;
     private int idcliente;
     private Date fechainicio;
     private Date fechafin;

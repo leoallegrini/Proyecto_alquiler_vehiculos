@@ -14,11 +14,15 @@ export class AppComponent {
   }
 
   Logout(){
-    this.loginService.logout();
+    this.loginService.clear();
   }
 
   estaLogueado(){
-    return this.loginService.estaLogueado();
+    return this.loginService.isLogged();
+  }
+
+  tipoUsuario(){
+    return this.loginService.getIdRol();
   }
 
 

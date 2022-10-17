@@ -19,6 +19,12 @@
           <li class="nav-item" *ngIf="!estaLogueado()">
             <a class="nav-link" href="/login">Registrar/Ingresar</a>
           </li>
+          <li class="nav-item" *ngIf="tipoUsuario() == 2">
+            <a class="nav-link" href="/modificarEmpresa">Modificar Empresa</a>
+          </li>
+          <li class="nav-item" *ngIf="tipoUsuario() == 2">
+            <a class="nav-link" href="/vehiculos">Modificar Vehiculos</a>
+          </li>
           <li class="nav-item">
             <a
               class="nav-link"

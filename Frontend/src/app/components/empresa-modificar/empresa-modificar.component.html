@@ -2,7 +2,7 @@
   <div class="col-md-6 offset-md-3">
     <h1 style="text-shadow: 2px 0 #000; color:gold">Rentals Venado</h1>
     <h3 class="text-center" style="color: gold; text-shadow: 2px 0 #000;">Registro de empresa</h3>
-    <form (ngSubmit)= "crearEmpresa()" #alquilerForm = "ngForm">
+    <form (ngSubmit)= "modificarEmpresa()" #alquilerForm = "ngForm">
       <div class="row" style="text-shadow: 2px 0 #000; color: gold">
         <div class="col">
           <div class="form-group">
@@ -10,7 +10,7 @@
             <input type="text"
             class="form-control"
             id="nombre"
-            [(ngModel)] = "empresa.nombre"
+            [(ngModel)] = "empresaUtilizada.nombre"
             name="nombre"
             required
             minlength="4"
@@ -31,7 +31,7 @@
             <input type="text"
             class="form-control"
             id="apellido"
-            [(ngModel)] = "empresa.apellido"
+            [(ngModel)] = "empresaUtilizada.apellido"
             name="apellido"
             required
             minlength="2"
@@ -54,7 +54,7 @@
             required
             class="form-control"
             id="razonsocial"
-            [(ngModel)] = "empresa.razonsocial"
+            [(ngModel)] = "empresaUtilizada.razonsocial"
             name="razonsocial"
             required
             minlength="8"
@@ -76,7 +76,7 @@
             placeholder="Ingresa tu cuit/cuil"
             class="form-control"
             id="cuit"
-            [(ngModel)] = "empresa.cuit"
+            [(ngModel)] = "empresaUtilizada.cuit"
             name="cuit"
             required
             minlength="8"
@@ -96,7 +96,7 @@
             placeholder="Ingresa tu celular con codigo de area"
             class="form-control"
             id="celular"
-            [(ngModel)] = "empresa.celular"
+            [(ngModel)] = "empresaUtilizada.celular"
             name="celular"
             required
             minlength="8"
@@ -111,35 +111,12 @@
           </div>
           <br>
           <div class="form-group">
-            <label>Correo Electrónico: </label>
-            <input type="email"
-            placeholder="Ingresa tu email"
-            class="form-control"
-            id="email"
-            [(ngModel)] = "empresa.correo"
-            name="email"
-            pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
-            required
-            minlength="8"
-            maxlength="50"
-            #email = "ngModel">
-            <div class="text text-danger"  *ngIf= "email.invalid && (email.dirty || email.touched)" >
-              <div *ngIf= "email.hasError('required') ||
-               email.hasError('minlength') || email.hasError('maxlength') || email.hasError('pattern')">
-                Ingrese un correo electronico valido (user@gmail.com)
-              </div>
-            </div>
-          </div>
-          <br>
-        </div>
-        <div>
-          <div class="form-group" style="margin-bottom:10px ;display: inline-block;">
             <label>Contraseña: </label>
             <input type="password"
             placeholder="Ingresa tu contraseña"
             class="form-control"
             id="password"
-            [(ngModel)] = "empresa.password"
+            [(ngModel)] = "empresaUtilizada.password"
             name="password"
             required
             minlength="4"
@@ -152,11 +129,14 @@
               </div>
             </div>
           </div>
+          <br>
+        </div>
+        <div>
         </div>
       </div>
       <button class="btn btn-success"
       style="float: right;" [disabled]= "!alquilerForm.form.valid">
-      Confirmar registro</button>
+      Confirmar modificacion</button>
     </form>
   </div>
   </header>

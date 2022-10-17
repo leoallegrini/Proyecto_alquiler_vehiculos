@@ -1,6 +1,7 @@
 <header class="masthead">
 <div class="container">
-  <h2 style="text-shadow: 2px 0 #000; color:gold">Lista de vehiculos para alquilar</h2>
+  <h2 *ngIf="tipoUsuario() != 2"style="text-shadow: 2px 0 #000; color:gold">Lista de vehiculos para alquilar</h2>
+  <h2 *ngIf="tipoUsuario() == 2" style="text-shadow: 2px 0 #000; color:gold">Lista de vehiculos</h2>
   <table class="table table-striped">
     <thead class="table-dark">
       <tr>
@@ -19,7 +20,8 @@
         <td>{{ vehiculo.modelo }}</td>
         <td>{{ vehiculo.anio }}</td>
         <td>${{ vehiculo.precioalquiler }}</td>
-        <td><button class="btn btn-success" (click)="SeleccionarVehiculo(vehiculo)">Seleccionar</button></td>
+        <td *ngIf="tipoUsuario() != 2"><button class="btn btn-success" (click)="SeleccionarVehiculo(vehiculo)">Seleccionar</button></td>
+        <td *ngIf="tipoUsuario() == 2"><button class="btn btn-success" (click)="ModificarVehiculo(vehiculo)">Seleccionar</button></td>
       </tr>
     </tbody>
   </table>
