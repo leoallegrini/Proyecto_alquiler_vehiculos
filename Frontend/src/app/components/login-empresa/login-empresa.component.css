@@ -1,4 +1,6 @@
 .container {
   overflow-y: hidden;
   min-height: 70vh;
+  opacity: 1;
  }
+

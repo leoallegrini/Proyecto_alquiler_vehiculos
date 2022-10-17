@@ -3,10 +3,10 @@
       <h1 style="text-shadow: 2px 0 #000; color:gold">Rentals Venado</h1>
       <h3 class="text-center" style="color: gold; text-shadow: 2px 0 #000;">Creación de vehículo</h3>
       <form (ngSubmit)= "crearVehiculo()" #alquilerForm = "ngForm">
-        <div class="row" style="text-shadow: 2px 0 #000; color: gold">
+        <div class="row" style="color: black">
           <div class="col">
             <div class="form-group">
-              <label>Marca: </label>
+              <label style="background-color: gold">Marca: </label>
               <input type="text"
               class="form-control"
               id="marca"
@@ -27,7 +27,7 @@
             </div>
             <br>
             <div class="form-group">
-              <label>Modelo: </label>
+              <label style="background-color: gold">Modelo: </label>
               <input type="text"
               class="form-control"
               id="modelo"
@@ -48,7 +48,7 @@
             </div>
             <br>
             <div class="form-group">
-              <label>Año: </label>
+              <label style="background-color: gold">Año: </label>
               <input type="number"
               placeholder="Ingresa el año"
               required
@@ -69,8 +69,8 @@
             </div>
             <br>
             <div class="form-group">
-              <label>Imagen </label>
-              <input type="url"
+              <label style="background-color: gold">Imagen:</label>
+              <input type="file"
               placeholder="Ingresa la imagen del vehiculo"
               class="form-control"
               id="imagen"
@@ -91,7 +91,7 @@
           </div>
           <div class="col">
             <div class="form-group">
-              <label>Patente: </label>
+              <label style="background-color: gold;">Patente: </label>
               <input type="text"
               placeholder="Ingresa la patente"
               class="form-control"
@@ -111,7 +111,7 @@
             </div>
             <br>
             <div class="form-group">
-              <label>Tamaño: </label>
+              <label style="background-color: gold">Tamaño: </label>
               <input type="text"
               placeholder="Ingresa el tamaño"
               class="form-control"
@@ -131,7 +131,7 @@
             </div>
             <br>
             <div class="form-group">
-              <label>Transmision </label>
+              <label style="background-color: gold">Transmision: </label>
               <input type="number"
               placeholder="Ingresa el tipo de transmision"
               class="form-control"
@@ -151,7 +151,7 @@
             </div>
             <br>
             <div class="form-group">
-              <label>Categoria: </label>
+              <label style="background-color: gold">Categoria: </label>
               <input type="text"
               placeholder="Ingresa tu categoria"
               class="form-control"
@@ -172,7 +172,7 @@
           </div>
           <div>
             <div class="form-group" style="margin-bottom:10px ;display: inline-block;">
-              <label>Precio: </label>
+              <label style="background-color: gold">Precio: </label>
               <input type="number"
               placeholder="Ingresa el precio"
               class="form-control"
